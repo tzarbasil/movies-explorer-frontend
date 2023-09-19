@@ -1,0 +1,84 @@
+.navigation {
+  height: 100%;
+  width: 520px;
+  background: #202020;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  transform: scale(0);
+}
+
+.navigation.active {
+  transform: scale(1);
+
+}
+
+.navigation__content {
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 141px;
+  align-items: center;
+}
+
+.navigation__link {
+  color: #FFF;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  margin: 0;
+}
+
+.navigation__button {
+  background: url('../../images/closeButtoon.svg');
+  background-color: none;
+  border: none;
+  width: 34px;
+  height: 51px;
+  background-size: contain;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  margin-right: 25px;
+  margin-top: 21px;
+}
+
+@media screen and (min-width: 1024px) {
+  .navigation {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navigation__content {
+    margin-top: 125px;
+    margin-right: 0;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .navigation__account-link {
+    margin-top: 418px;
+  }
+
+  .navigation__button {
+    margin-right: 12px;
+    margin-top: 13px;
+  }
+}

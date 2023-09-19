@@ -1,0 +1,150 @@
+.profile {
+    width: 100%;
+    height: 100%;
+}
+
+.profile__title {
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.profile__container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 54px;
+}
+
+.profile__userdata-container {
+    display: flex;
+    min-height: 200px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 34px;
+}
+
+.profile__subtitle {
+    color: #FFF;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.profile__userdata {
+    color: #FFF;
+    text-align: right;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.profile__edit-button {
+    color: #FFF;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    background: none;
+    margin-bottom: 14px;
+}
+
+.profile__edit-button:hover {
+    color: rgb(156, 156, 156);
+}
+
+.profile__logout-button {
+    color: #EE3465;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    background: none;
+}
+
+.profile__logout-button:hover {
+    color: #8f1d3b;
+
+}
+
+.profile__userdata-line {
+    display: flex;
+    justify-content: space-between;
+    min-width: 410px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 16px;
+    margin-top: 17px;
+}
+
+.profile__userdata-line:last-child {
+    border: none;
+}
+
+.profile__buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile__container {
+        margin-top: 216px;
+    }
+
+    .profile__userdata-container {
+        margin-top: 7px;
+    }
+
+    .profile__buttons {
+        margin-top: 139px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profile__title {
+        font-size: 24px;
+        margin: 70px 0 10px 0;
+    }
+
+    .profile__userdata-line {
+
+        max-width: 320px;
+        min-width: 260px;
+    }
+
+    .profile__container {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile__userdata-container {
+        margin: 0;
+    }
+
+    .profile__buttons {
+        margin-top: 310px;
+        margin-bottom: 40px;
+    }
+
+    .profile__edit-button {
+        font-size: 12px;
+    }
+
+    .profile__logout-button {
+        font-size: 12px;
+    }
+}
