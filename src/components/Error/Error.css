@@ -46,11 +46,20 @@
     .error__title {
         color: #FFF;
         text-align: center;
-        font-family: Inter;
         font-size: 140px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .error__title {
+      font-size: 140px; 
+    }
+
+    .error {
+        margin: 406px auto;
     }
   }
 

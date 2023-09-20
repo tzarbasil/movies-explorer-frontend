@@ -31,20 +31,20 @@ function App() {
         {/* <CurrentUserContext.Provider value={currentUser}> */}
         <Routes>
 
-          <Route path="/" element={<div className='route__container'> <Header loggedIn={false} /> <Main /> <Footer />
+          <Route path="/" element={<div className='route-container'> <Header loggedIn={false} /> <Main /> <Footer />
           </div>} />
 
           <Route path="/" element={<Main />} />
-          <Route path="/movies" element={<div className='route__container'> <Header loggedIn={true} /><Movies /></div>} />
-          <Route path="/saved-movies" element={<div className='route__container'> <Header loggedIn={true} /><SavedMovies /></div>} />
-          <Route path="/profile" element={<div className='route__container'> <Header loggedIn={true} /><Profile /></div>} />
-          <Route path="/signup" element={<Register />} />
-          <Route path="/signin" element={<Login />} />
-          <Route path="*" element={<Error />} />
+          <Route path="/movies" element={<div className='route-container'> <Header loggedIn={true} /><main><Movies /></main><Footer /></div>} />
+          <Route path="/saved-movies" element={<div className='route-container'> <Header loggedIn={true} /> <main><SavedMovies /> </main> <Footer /></div>} />
+          <Route path="/profile" element={<div className='route-container'> <Header loggedIn={true} /> <main> <Profile /> </main> </div>} />
+          < Route path="/signup" element={< main > <Register /> </main >} />
+          < Route path="/signin" element={< main > <Login /> </main >} />
+          < Route path="*" element={< main > < Error /> </main >} />
 
-        </Routes>
-      </div>
-    </div>
+        </Routes >
+      </div >
+    </div >
   );
 }
 export default App;

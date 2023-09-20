@@ -12,6 +12,10 @@
     background: #202020;
 }
 
+.header__logo:hover {
+    opacity: .8;
+}
+
 .header__login {
     color: #000;
     font-size: 12px;
@@ -33,7 +37,6 @@
 .header__register {
     color: #FFF;
     text-align: right;
-    font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -41,7 +44,7 @@
     text-decoration: none;
 }
 
-.link__container {
+.link-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -78,7 +81,7 @@
     margin-left: auto;
     gap: 21px;
     display: flex;
-    margin-right: 50px;
+    margin-right: 10px;
 }
 
 .header__film-link {
@@ -93,9 +96,19 @@
     gap: 21px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .header {
         padding: 0 30px;
+    }
+
+    .header__register {
+        font-size: 12px;
+    }
+
+    .header__menu-button {
+        background: none;
+        border: none;
+        display: block;
     }
 
     .header__links {
@@ -110,17 +123,40 @@
         display: none;
     }
 
+    .button__img {
+        width: 46px;
+    }
+
+    .header__login {
+        font-size: 12px;
+        width: 76px;
+        height: 32px;
+    }
+
+    .link-container {
+        margin-left: 122px;
+        gap: 30px;
+    }
+
+    .header__black {
+        justify-content: space-between;
+    }
+
+    .header__another-links {
+        margin: 0;
+    }
+
     .header__menu-button {
-        background: none;
-        border: none;
-        display: block;
+        padding: 0;
+        margin: 0;
     }
 }
 
-@media screen and (max-width: 767px) {
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .header {
-        padding: 0 14px;
-        justify-content: normal;
+       padding-left: 14px;
+       padding-right: 14px;
     }
 
     .header__register {
@@ -145,27 +181,32 @@
         display: none;
     }
 
-    .header__login {
-        font-size: 10px;
-        width: 54px;
-        height: 26px;
+    .button__img {
+        width: 40px;
     }
 
-    .link__container {
-        margin-left: 99px;
+    .header__login {
+        font-size: 10px;
+        width: 55px;
+        height: 25px;
+    }
+
+    .link-container {
+        margin-left: 84px;
+        gap: 13px;
     }
 
     .header__black {
-        padding: 0 0 0 14px;
         justify-content: space-between;
     }
 
     .header__another-links {
-        margin-left: 10px;
+        margin: 0;
     }
 
     .header__menu-button {
         padding: 0;
-        margin: 0 14px 0 0;
+        margin: 0;
     }
 }
+

@@ -1,1 +1,10 @@
 @import url(../src/vendor/normalize.css);
+@import url(../src/vendor/fonts.css);
+
+a:hover {
+    opacity: .8;
+  }
+
+button:hover {
+    opacity: .8;
+}

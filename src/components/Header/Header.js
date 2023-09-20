@@ -18,7 +18,7 @@ export default function Header({ loggedIn }) {
                         <img className="header__logo" src={logo} alt="Логотип проекта" />
                     </NavLink>
 
-                    <div className="link__container">
+                    <div className="link-container">
                         <NavLink className="header__register" to="/signup"> Регистрация </NavLink>
                         <NavLink className="header__login" to="/signin"> Войти  </NavLink>
                     </div>
@@ -30,18 +30,18 @@ export default function Header({ loggedIn }) {
                         <img className="header__logo" src={logo} alt="Логотип проекта" />
                     </NavLink>
 
-                    <div className='header__film-links'>
+                    <nav className='header__film-links'>
                         <NavLink className="header__film-link" to="/movies"> Фильмы </NavLink>
                         <NavLink className="header__film-link" to="/saved-movies"> Сохранённые фильмы  </NavLink>
-                    </div>
+                    </nav>
 
-                    <div className='header__another-links'>
+                    <ul className='header__another-links'>
                         <NavLink className="header__account-link" to="/profile"> <img className="header__account" src={AccountLogoGray} alt="аккаунт"></img> </NavLink>
-                        <button className="header__menu-button" onClick={() => setNavigationActive(true)}  >
-                            <img src={MenuButton} alt="Меню" />
+                        <button type="button" className="header__menu-button" onClick={() => setNavigationActive(true)}  >
+                            <img className='button__img' src={MenuButton} alt="Меню" />
                         </button> 
                         <Navigation active={NavigationACtive} setActive={setNavigationActive}></Navigation>
-                    </div>
+                    </ul>
                 </header>
             )}
         </>

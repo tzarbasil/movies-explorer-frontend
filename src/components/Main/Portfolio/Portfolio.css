@@ -35,12 +35,10 @@
 .portfolio__link-container {
     display: flex;
     flex-direction: column;
-    padding-top: 34px;
+    padding: 34px 0 0 0;
 }
 
 .portfolio__link-point {
-    width: 20px;
-    height: 20px;
     margin-right: 4px;
     margin-top: 6px;
 }
@@ -58,29 +56,27 @@
         line-height: 50px;
         letter-spacing: -1.12px;
     }
-
-
-
-
-
-
-
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 767px) and (max-width: 1024px) {
     .portfolio {
-        padding: 0 14px;
-        margin-top: 70px;
+        padding: 0 50px;
+        margin-top: 92px;
         height: 100%;
-        margin-bottom: 119px;
+        margin-bottom: 133px;
     }
 
     .portfolio__link {
-        font-size: 18px;
-        letter-spacing: -0.72px;
+        font-size: 28px;
+        letter-spacing: -1.12px;
+        line-height: 50px;
         border-bottom: 1px solid white;
-        margin-bottom: 10px;
-        padding-bottom: 7px;
+        margin-bottom: 18px;
+        padding-bottom: 20px;
+    }
+
+    .portfolio__link:last-child {
+        border: none;
     }
 
     .portfolio__link-point {
@@ -89,12 +85,12 @@
     }
 
     .portfolio__title {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 20px;
     }
 
     .portfolio__link-container {
-        padding-top: 18px;
+        padding-top: 34px;
     }
 
     .portfolio__link-point {
@@ -102,5 +98,41 @@
         height: 14px;
         margin: 0;
         margin-right: 4px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .portfolio {
+        padding: 0 14px;
+        margin-top: 71px;
+        height: 100%;
+        margin-bottom: 109px;
+    }
+
+    .portfolio__link {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.72px;
+        border-bottom: 1px solid white;
+    }
+
+    .portfolio__link:last-child {
+        border: none;
+    }
+
+    .portfolio__title {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .portfolio__link-container {
+        padding-top: 28px;
+    }
+
+    .portfolio__link-point {
+        width: 14px;
+        height: 11px;
+        margin-right: 3px;
+        margin-top: -3px;
     }
 }

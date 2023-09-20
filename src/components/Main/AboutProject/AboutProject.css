@@ -31,7 +31,6 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.8px;
-    width: 550px;
     margin: 0;
 }
 
@@ -41,7 +40,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    width: 550px;
+    margin-top: 26px;
 }
 
 .about-project__week {
@@ -109,55 +108,118 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .about-project {
+        padding: 0 50px;
+    }
+
+    .about-project__title {
+        font-size: 22px;
+        margin-top: 89px;
+        padding-bottom: 25px;
+        margin-bottom: 69px;
+    }
+
+    .about-project__five {
+        font-size: 20px;
+        letter-spacing: -0.72px;
+        margin-bottom: 21px;
+        letter-spacing: -0.8px;
+    }
+
+    .about-project__subtitle {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+        line-height: 18px;
+    }
+
+    .about-project__container {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin: 0;
+        margin-bottom: 94px;
+    }
+
+    .about-project__week {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .about-project__week-4 {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .about-project__specialisation {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .about-project__deadlines {
+        gap: 14px 0;
+        grid-template-columns: 140px 4fr;
+    }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
     .about-project {
         padding: 0 18px;
     }
 
     .about-project__title {
-        font-size: 18px;
-        margin-top: 72px;
+        margin-top: 70px;
         padding-bottom: 28px;
-        margin-bottom: 62px;
+        margin-bottom: 59px;
+
+        font-size: 18px;
+        letter-spacing: -0.72px;
     }
 
     .about-project__five {
+        width: 100%;
         font-size: 18px;
-        max-width: 284px;
         letter-spacing: -0.72px;
-        margin-bottom: 16px;
+        margin-bottom: 17px;
+        letter-spacing: -0.72px;
     }
 
     .about-project__subtitle {
         font-size: 11px;
-        max-width: 284px;
         line-height: 16px;
         margin: 0;
+        line-height: 16px;
+        /* 145.455% */
     }
 
     .about-project__container {
         display: flex;
         flex-direction: column;
+        margin-top: 61px;
         gap: 57px;
-        margin: 0;
-        margin-bottom: 61px;
+        margin-bottom: 60px;
     }
 
     .about-project__week {
+        font-size: 14px;
+        width: 100%;
         font-size: 11px;
-        width: 100px;
     }
 
     .about-project__week-4 {
-        width: 184px;
+        width: 100%;
+        font-size: 11px;
     }
 
     .about-project__specialisation {
         font-size: 11px;
+        line-height: 17px;
     }
 
     .about-project__deadlines {
         gap: 8px 0;
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 100px 4fr;
     }
 }
