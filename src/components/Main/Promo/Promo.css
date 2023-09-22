@@ -1,0 +1,146 @@
+.promo {
+    background-color: #073042;
+    margin: -74px 0 0;
+    padding: 124px 70px 86px 69px;
+    display: flex;
+    gap: 190px;
+}
+
+.promo__title {
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 58px;
+    margin-bottom: 37px;
+    margin-top: 25px;
+}
+
+.promo__subtitle {
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: .5;
+    max-width: 310px;
+    margin-bottom: 153px;
+}
+
+.promo__image {
+    width: 310px;
+    height: 304px;
+    margin-top: 25px;
+}
+
+.promo__link {
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #FFF;
+    padding: 10px 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .promo__title {
+        padding: 0 40px;
+        min-width: 300px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 21px;
+
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 50px;
+    }
+
+    .promo-link {
+        margin-top: 91px;
+    }
+
+    .promo {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+    }
+
+    .promo__image {
+        width: 310px;
+        height: 304px;
+        margin-top: 214px;
+    }
+
+    .promo__subtitle {
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        max-width: 260px;
+        margin: 0;
+    }
+
+    .promo__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 76px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .promo__title {
+        width: 100%;
+        text-align: center;
+        margin-top: 44px;
+        margin-bottom: 24px;
+
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 38px;
+        letter-spacing: -1.2px;
+    }
+
+    .promo-link {
+        margin-top: 79px;
+    }
+
+    .promo {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+    }
+
+    .promo__image {
+        width: 210px;
+        height: 206px;
+        margin-top: 144px;
+    }
+
+    .promo__subtitle {
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        max-width: 260px;
+        margin: 0;
+    }
+
+    .promo__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+}

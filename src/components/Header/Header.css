@@ -1,0 +1,247 @@
+.header {
+    min-height: 74px;
+    padding: 0 70px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header__account {
+    border-radius: 6px;
+    background: #313131;
+    padding: 10px;
+    margin-left: 12px;
+}
+
+.header__navigation {
+    padding: 0;
+}
+
+.header__account-link {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 29px;
+}
+
+.header__link-list {
+    gap: 21px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.link-container {
+    margin-left: auto;
+}
+
+.link-container-movies {
+    visibility: hidden;
+}
+
+.header__logo:hover {
+    opacity: .8;
+}
+
+.header__login {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 76px;
+    height: 32px;
+}
+
+.header__register {
+    color: #FFF;
+    text-align: right;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    text-decoration: none;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.header__login {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    background-color: #3DDC84;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 76px;
+    height: 32px;
+}
+
+.header__menu-button {
+    background: none;
+    border: none;
+    display: none;
+}
+
+.header__links-list {
+    margin-right: 0;
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+
+.header__film-link {
+    color: #FFF;
+    text-align: right;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    gap: 21px;
+}
+
+
+@media screen and (width: 768px) {
+    .header {
+        padding: 0 30px;
+    }
+
+    .header__register {
+        font-size: 12px;
+    }
+
+    .header__menu-button {
+        background: none;
+        border: none;
+        display: block;
+    }
+
+    .header__links-list {
+        display: none;
+    }
+
+    .header__account-link {
+        display: none;
+    }
+
+    .button-img {
+        width: 40px;
+    }
+
+    .header__login {
+        font-size: 12px;
+        width: 76px;
+        height: 31px;
+    }
+
+    .link-container {
+        margin-left: 84px;
+        gap: 30px;
+    }
+
+    .header-black {
+        justify-content: space-between;
+    }
+
+    .header__menu-button {
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-movie {
+        padding: 0;
+        padding-left: 28px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .header {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .header__register {
+        font-size: 10px;
+    }
+
+    .header__menu-button {
+        background: none;
+        border: none;
+        display: block;
+    }
+
+    .header__links-list {
+        display: none;
+    }
+
+    .header__account-link {
+        display: none;
+    }
+
+    .button-img {
+        width: 40px;
+    }
+
+    .header__login {
+        font-size: 10px;
+        width: 55px;
+        height: 25px;
+    }
+
+    .link-container {
+        margin-left: 25px;
+        gap: 14px;
+    }
+
+    .header-black {
+        justify-content: space-between;
+    }
+
+    .header__navigation {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header__menu-button {
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-movie {
+        padding-left: 28px;
+        padding-right: 0;
+    }
+}
