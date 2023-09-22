@@ -11,12 +11,13 @@
     letter-spacing: -0.88px;
     border-bottom: 1px solid white;
     padding-bottom: 23px;
-    margin: 110px 0 66px 0;
+    margin: 108px 0 66px 0;
 }
 
 .about-me__container {
     margin-top: 67px;
     display: flex;
+    align-items: center;
 }
 
 .about-me__name {
@@ -149,6 +150,7 @@
         letter-spacing: -0.88px;
         padding-bottom: 23px;
         margin-bottom: 0;
+        margin: 90px 0 0 0;
     }
 }
 
@@ -173,6 +175,9 @@
     .about-me__photo {
         width: 292px;
         height: 352px;
+        margin: auto;
+        /* margin-right: auto;
+        margin-left: 0; */
     }
 
     .about-me__job {
@@ -185,6 +190,11 @@
         font-size: 11px;
         line-height: 16px;
         margin-bottom: 71px;
+    }
+
+    .about-me__description-container {
+        display: flex;
+        flex-direction: column;
     }
 
     .about-me__title {

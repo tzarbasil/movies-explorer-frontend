@@ -14,21 +14,21 @@ export default function Register() {
                 <form className="register__field">
 
                     <label className="register__field-text">
-                        <label className="register__field_subtitle">Имя</label>
+                        <label className="register__field-subtitle">Имя</label>
                         <input className="register__input register__input_type_email" type="name"
                             name="about" minLength={2} maxLength={40} required placeholder='Имя' />
                         {/* <span className="register__form-input-error">Что-то пошло не так...</span> */}
                     </label>
 
                     <label className="register__field-text">
-                        <label className="register__field_subtitle">E-Mail</label>
+                        <label className="register__field-subtitle">E-Mail</label>
                         <input className="register__input register__input_type_email" type="email"
                             name="about" minLength={2} maxLength={40} required placeholder='E-mail' />
                         {/* <span className="register__form-input-error">Что-то пошло не так...</span> */}
                     </label>
 
                     <label className="register__field-text">
-                        <label className="register__field_subtitle">Пароль</label>
+                        <label className="register__field-subtitle">Пароль</label>
                         <input className="register__input register__input_type_password" type="password"
                             name="about" minLength={2} maxLength={40} required placeholder='Пароль' />
                         {/* <span className="register__form-input-error">Что-то пошло не так...</span> */}
@@ -36,10 +36,10 @@ export default function Register() {
                 </form>
             </div>
 
-            <Link className="register__auth_button" to="/movies"><button type="submit" className="register__button"> Зарегистрироваться</button></Link>
+            <Link className="register__auth-button" to="/movies"><button type="submit" className="register__button"> Зарегистрироваться</button></Link>
             <div className="register__offer-container">
-                <h2 className="register__auth_subtitle">Уже зарегистрированы?</h2>
-                <Link className="register__auth_enter" to="/signin"> Войти </Link>
+                <h2 className="register__auth-subtitle">Уже зарегистрированы?</h2>
+                <Link className="register__auth-enter" to="/signin"> Войти </Link>
             </div>
         </div>
     )

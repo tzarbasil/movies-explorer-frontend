@@ -6,12 +6,12 @@ import "./SavedMovies.css";
 
 export default function SavedMovies() {
     return (
-        <div className="saved-movies">
+        <section className="saved-movies">
             <fieldset className="saved-movies__fieldset">
                 <SearchForm />
             </fieldset>
             <MoviesCardList />
-        </div>
+        </section>
     )
 }
 

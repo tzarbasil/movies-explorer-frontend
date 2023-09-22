@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     padding: 0 70px;
+    margin-bottom: 159px;
 }
 
 .movie-list__container {
@@ -30,7 +31,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-top: 50px;
 }
+
 @media screen and (max-width: 1200px) {
     .movie-list__container {
         padding: 0 30px;
@@ -46,11 +49,12 @@
     .movie-list__button {
         width: 708px;
         height: 36px;
+        margin-top: 76px;
     }
 
     .movie-list {
         margin-top: 93px;
-        margin-bottom: 211px;
+        margin-bottom: 0;
     }
 
     .movie-list__container {
@@ -67,13 +71,16 @@
     .movie-list__container {
         grid-template-columns: repeat(1, 1fr);
         row-gap: 15px;
+        padding: 0;
     }
 
     .movie-list {
         margin-top: 62px;
+        margin-bottom: 0;
     }
 
     .movie-list__button {
+        margin-top: 76px;
         width: 300px;
         height: 36px;
     }

@@ -1,28 +1,32 @@
 .movies__fieldset {
-    max-width: 1140px;
-    height: 160px; 
-    margin: 69px auto 0;
-    border: none;
-    border-bottom: 1px solid rgba(170, 170, 170, .2);
-    padding: 0 0 2px 0;
+  max-width: 1140px;
+  height: 160px;
+  margin: 69px auto 0;
+  border: none;
+  border-bottom: 1px solid rgba(170, 170, 170, .2);
+  padding: 0 0 2px 0;
 }
 
 .movies {
-    width: 100%;
+  width: 100%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   .movies__fieldset {
-    padding: 0 30px;
-    border: none;
+    max-width: 1000px;
   }
 }
+
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .movies__fieldset {
     border: none;
     padding: 0 30px;
-    margin: 71px auto 0;
+    margin: 66px auto 0;
+  }
+
+  .movies {
+    margin-bottom: 158px;
   }
 }
 
@@ -31,5 +35,9 @@
     border: none;
     padding: 0 15px;
     margin: 71px auto 0;
+  }
+
+  .movies {
+    margin-bottom: 160px;
   }
 }

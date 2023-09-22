@@ -1,7 +1,7 @@
 import "./Profile.css";
 import { NavLink } from "react-router-dom";
 
-export default function Movies() {
+export default function Profile() {
     return (
         <section className="profile">
 
@@ -24,7 +24,7 @@ export default function Movies() {
 
             <div className="profile__buttons">
                 <button type="submit" className="profile__edit-button">Редактировать</button>
-                <NavLink className="profile__logout-nav" to="/"><button className="profile__logout-button">Выйти из аккаунта</button></NavLink>
+                <NavLink className="profile__logout-nav" to="/"><button type="button" className="profile__logout-button">Выйти из аккаунта</button></NavLink>
             </div>
         </section>
     )

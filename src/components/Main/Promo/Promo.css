@@ -1,7 +1,7 @@
 .promo {
-    min-height: 524px;
     background-color: #073042;
-    padding: 50px 70px 0 69px;
+    margin: -74px 0 0;
+    padding: 124px 70px 86px 69px;
     display: flex;
     gap: 190px;
 }
@@ -75,7 +75,7 @@
     .promo__image {
         width: 310px;
         height: 304px;
-        margin-top: 139px;
+        margin-top: 214px;
     }
 
     .promo__subtitle {
@@ -105,7 +105,7 @@
 
         font-size: 30px;
         font-weight: 400;
-        line-height: 38px;  
+        line-height: 38px;
         letter-spacing: -1.2px;
     }
 
@@ -124,7 +124,7 @@
     .promo__image {
         width: 210px;
         height: 206px;
-        margin-top: 70px;
+        margin-top: 144px;
     }
 
     .promo__subtitle {

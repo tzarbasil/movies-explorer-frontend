@@ -6,7 +6,7 @@ export default function FilterCheckbox() {
             <label className="switch" htmlFor="checkbox">
                 <input type="checkbox" id="checkbox" />
                 <div className="slider round"></div>
-                <span className="checkbox__span">Короткометражки</span>
+                <span className="switch__span">Короткометражки</span>
             </label>
         </div>
     );

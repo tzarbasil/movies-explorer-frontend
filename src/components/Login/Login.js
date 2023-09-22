@@ -14,14 +14,14 @@ export default function Login() {
                 <form className="login__field">
 
                     <label className="login__field-text">
-                        <label className="login__field_subtitle">E-Mail</label>
+                        <label className="login__field-subtitle">E-Mail</label>
                         <input className="login__input login__input_type_email" type="email"
                             name="about" minLength={2} maxLength={40} required placeholder='Логин' />
                         {/* <span className="login__form-input-error">Что-то пошло не так...</span> */}
                     </label>
 
                     <label className="login__field-text">
-                        <label className="login__field_subtitle">Пароль</label>
+                        <label className="login__field-subtitle">Пароль</label>
                         <input className="login__input login__input_type_password" type="password"
                             name="about" minLength={2} maxLength={40} required placeholder='Пароль'/>
                         {/* <span className="login__form-input-error">Что-то пошло не так...</span> */}
@@ -29,10 +29,10 @@ export default function Login() {
                 </form>
             </div>
 
-            <Link className="login__auth_button" to="/movies"><button type="submit" className="login__button"> Войти</button></Link>
+            <Link className="login__auth-button" to="/movies"><button type="submit" className="login__button"> Войти</button></Link>
             <div className="login__offer-container">
-                <h2 className="login__auth_subtitle">Ещё не зарегистрированы?</h2>
-                <Link className="login__auth_enter" to="/signup"> Регистрация </Link>
+                <h2 className="login__auth-subtitle">Ещё не зарегистрированы?</h2>
+                <Link className="login__auth-enter" to="/signup"> Регистрация </Link>
             </div>
         </div>
     )

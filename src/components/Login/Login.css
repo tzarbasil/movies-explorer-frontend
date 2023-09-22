@@ -31,7 +31,7 @@
     margin-top: 20px;
 }
 
-.login__field_subtitle {
+.login__field-subtitle {
     color: #8B8B8B;
     font-size: 10px;
     font-style: normal;
@@ -84,7 +84,7 @@
     line-height: normal;
 }
 
-.login__auth_subtitle {
+.login__auth-subtitle {
     color: #8B8B8B;
     text-align: center;
     font-size: 14px;
@@ -93,7 +93,7 @@
     line-height: normal;
 }
 
-.login__auth_enter {
+.login__auth-enter {
     color: #4285F4;
     text-align: center;
     font-size: 14px;
@@ -153,11 +153,11 @@
         margin-bottom: 288px;
     }
 
-    .login__auth_subtitle {
+    .login__auth-subtitle {
         font-size: 12px;
     }
 
-    .login__auth_enter {
+    .login__auth-enter {
         font-size: 12px;
         text-decoration: none;
     }

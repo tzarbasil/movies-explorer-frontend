@@ -111,19 +111,20 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .about-project {
         padding: 0 50px;
+        margin-bottom: -6px;
     }
 
     .about-project__title {
         font-size: 22px;
         margin-top: 89px;
-        padding-bottom: 25px;
-        margin-bottom: 69px;
+        padding-bottom: 23px;
+        margin-bottom: 70px;
     }
 
     .about-project__five {
         font-size: 20px;
         letter-spacing: -0.72px;
-        margin-bottom: 21px;
+        margin-bottom: 22px;
         letter-spacing: -0.8px;
     }
 
@@ -139,7 +140,7 @@
         flex-direction: row;
         gap: 30px;
         margin: 0;
-        margin-bottom: 94px;
+        margin-bottom: 92px;
     }
 
     .about-project__week {

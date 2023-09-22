@@ -15,14 +15,21 @@ import Footer from '../Footer/Footer.js'
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      setIsLoggedIn(false)
-    }
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     setIsLoggedIn(false)
+  //   }
+  // }, [isLoggedIn]);
 
+  // const [isMovieHeader, setIsisMovieHeader] = useState(false);
+
+  // useEffect(() => {
+  //   if (isMovieHeader) {
+  //     setIsisMovieHeader(false)
+  //   }
+  // }, [isMovieHeader]);
 
 
   return (
@@ -31,13 +38,13 @@ function App() {
         {/* <CurrentUserContext.Provider value={currentUser}> */}
         <Routes>
 
-          <Route path="/" element={<div className='route-container'> <Header loggedIn={false} /> <Main /> <Footer />
+          <Route path="/" element={<div className='route-container'> <Header /> <Main /> <Footer />
           </div>} />
 
           <Route path="/" element={<Main />} />
-          <Route path="/movies" element={<div className='route-container'> <Header loggedIn={true} /><main><Movies /></main><Footer /></div>} />
-          <Route path="/saved-movies" element={<div className='route-container'> <Header loggedIn={true} /> <main><SavedMovies /> </main> <Footer /></div>} />
-          <Route path="/profile" element={<div className='route-container'> <Header loggedIn={true} /> <main> <Profile /> </main> </div>} />
+          <Route path="/movies" element={<div className='route-container'> <Header /><main><Movies /></main><Footer /></div>} />
+          <Route path="/saved-movies" element={<div className='route-container'> <Header /> <main><SavedMovies /> </main> <Footer /></div>} />
+          <Route path="/profile" element={<div className='route-container'> <Header /> <main> <Profile /> </main> </div>} />
           < Route path="/signup" element={< main > <Register /> </main >} />
           < Route path="/signin" element={< main > <Login /> </main >} />
           < Route path="*" element={< main > < Error /> </main >} />

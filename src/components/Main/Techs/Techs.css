@@ -74,6 +74,8 @@
     .techs {
         background: #272727;
         padding: 0 50px;
+        min-height: 0;
+        padding-bottom: 91px;
     }
 
     .techs__list {
@@ -114,7 +116,7 @@
     }
 
     .techs__container {
-        padding-top: 87px;
+        padding-top: 92px;
     }
 }
 
