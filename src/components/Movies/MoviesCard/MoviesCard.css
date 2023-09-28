@@ -37,7 +37,49 @@
 .movie-card__button {
     background: none;
     border: none;
-    margin: auto 0;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 30px;
+    border-radius: 30px;
+    background: #313131;
+    width: 100px;
+    height: 29px;
+    color: white;
+    font-size: 12px;
+}
+
+.movie-card__button-delete {
+    background: none;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 30px;
+    border-radius: 30px;
+    background: #313131;
+    background-image: url('../../../images/closeButtoon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+    width: 100px;
+    height: 29px;
+    color: rgb(255, 0, 0);
+}
+
+.movie-card__button-saved {
+    background: none;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 30px;
+    border-radius: 30px;
+    background: #EE3465;
+    background-image: url('../../../images/added__film.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 29px;
+    color: white;
+
 }
 
 .movie-card__button-image {

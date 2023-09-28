@@ -69,6 +69,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0;
 }
 
 .register__button {
@@ -83,6 +84,12 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    cursor: pointer;
+}
+
+button[disabled] {
+    background-color: #585858;
+    color: #ffffff;
 }
 
 .register__auth-subtitle {

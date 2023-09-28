@@ -112,6 +112,7 @@
     background: none;
     border: none;
     display: none;
+    cursor: pointer;
 }
 
 .header__links-list {
