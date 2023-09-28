@@ -1,0 +1,11 @@
+.promo-link {
+  color: #FFF;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+  padding: 10px 20px;
+}
