@@ -16,6 +16,9 @@ export default function FormValidation() {
 
     const [loginFormValid, setLoginFormValid] = useState(false)
 
+    const [profileFormValid, setProfileFormValid] = useState(false)
+
+
     const nameHandler = (e) => {
         setName(e.target.value)
         if ((e.target.value.length < 3 || e.target.value.length > 40)) {
@@ -68,7 +71,17 @@ export default function FormValidation() {
             setLoginFormValid(true)
         }
 
-    }, [emailError, passwordError, nameError])
+    }, [emailError, passwordError])
+
+    useEffect(() => {
+        if (nameError || emailError) {
+            setProfileFormValid(false)
+
+        } else {
+            setProfileFormValid(true)
+        }
+
+    }, [emailError, nameError])
 
     const blurHandler = (e) => {
         switch (e.target.name) {
@@ -97,6 +110,7 @@ export default function FormValidation() {
         emailHandler,
         passwordHandler,
         formValid,
-        loginFormValid
+        loginFormValid,
+        profileFormValid
     };
 }

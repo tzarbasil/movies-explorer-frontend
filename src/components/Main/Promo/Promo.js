@@ -1,5 +1,4 @@
 import "./Promo.css";
-// import { Link } from "react-router-dom";
 import promoImg from '../../../images/web_image.svg';
 import NavTab from "../../NavTab/NavTab";
 

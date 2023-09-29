@@ -7,19 +7,21 @@ import { CurrentUserContext } from "../contexts/context";
 
 import { useContext } from 'react';
 
+import FormValidation from '../../utils/FormValidation';
+
 
 export default function Profile({ setCurrentUser }) {
     const navigate = useNavigate();
 
+    const { nameDirty, emailDirty, emailError, nameError,
+        blurHandler, emailHandler, nameHandler, profileFormValid } = FormValidation();
 
     const logOut = () => {
         localStorage.removeItem("jwt");
         setCurrentUser({})
-        // setLoggedIn(false);
         navigate('/');
     }
     const currentUser = useContext(CurrentUserContext)
-    // patchUserInfo
     const [formData, setFormData] = useState({ name: '', email: '', })
     const handleUserInput = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -51,19 +53,39 @@ export default function Profile({ setCurrentUser }) {
                 <form className="profile__userdata-container">
                     <div className="profile__userdata-line">
                         <label className="profile__subtitle">Имя</label>
-                        <input className="profile__userdata" name="name" onChange={handleUserInput} required minLength={2} maxLength={40} placeholder="Имя"></input>
+                        <input
+                            onBlur={e => blurHandler(e)}
+                            onChange={(e) => { handleUserInput(e); nameHandler(e) }}
+                            className="profile__userdata"
+                            name="name"
+                            required
+                            minLength={2}
+                            maxLength={40}
+                            placeholder="Имя"
+                        ></input>
+                        {(nameDirty && nameError) && <p className='register__form-input-error'>{nameError}</p>}
+
                     </div>
-                    {errorMessage && <p className='login__form-input-error'>{errorMessage}</p>}
                     <div className="profile__userdata-line">
                         <label className="profile__subtitle">E-mail</label>
-                        <input className="profile__userdata" name="email" onChange={handleUserInput} required minLength={2} maxLength={40} placeholder="E-mail"></input>
+                        <input
+                            onBlur={e => blurHandler(e)}
+                            onChange={(e) => { handleUserInput(e); emailHandler(e) }}
+                            className="profile__userdata"
+                            name="email"
+                            required
+                            minLength={2}
+                            maxLength={40}
+                            placeholder="E-mail">
+                        </input>
+                        {(emailDirty && emailError) && <p className='register__form-input-error'>{emailError}</p>}
+
                     </div>
-                    {errorMessage && <p className='login__form-input-error'>{errorMessage}</p>}
                 </form>
             </div>
 
             <div className="profile__buttons">
-                <button type="submit" className="profile__edit-button" onClick={updateUser}>Редактировать</button>
+                <button disabled={!profileFormValid} type="submit" className="profile__edit-button" onClick={updateUser}>Редактировать</button>
                 <NavLink className="profile__logout-nav" to="/"><button onClick={logOut} type="button" className="profile__logout-button">Выйти из аккаунта</button></NavLink>
             </div>
         </section>

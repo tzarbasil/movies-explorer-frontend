@@ -31,31 +31,34 @@ ${(isLoggedIn || location.pathname === '/movies') ? 'header-movie' : ''}
 `}>            <NavLink to="/">
                 <img className="header__logo" src={logo} alt="Логотип проекта" />
             </NavLink>
-            <ul className={`link-container ${(isLoggedIn || location.pathname !== '/') && 'link-container-movies'}`}>
+            < ul className={`link-container ${(isLoggedIn || location.pathname !== '/') && 'link-container-movies'}`}>
                 <NavLink className="header__register" to="/signup"> Регистрация </NavLink>
                 <NavLink className="header__login" to="/signin"> Войти  </NavLink>
             </ul>
 
-            {(isLoggedIn) && <nav className='header__links'>
-                <ul className='header__links-list'>
-                    <NavLink className="header__film-link" to="/movies"> Фильмы </NavLink>
-                    <NavLink className="header__film-link" to="/saved-movies"> Сохранённые фильмы  </NavLink>
+            {
+                (isLoggedIn) && <nav className='header__links'>
+                    <ul className='header__links-list'>
+                        <NavLink className="header__film-link" to="/movies"> Фильмы </NavLink>
+                        <NavLink className="header__film-link" to="/saved-movies"> Сохранённые фильмы  </NavLink>
 
-                    <NavLink className="header__account-link" to="/profile">
-                        {currentUser.name || 'Аккаунт'}
-                        <img className="header__account" src={AccountLogo} alt="аккаунт"></img>
-                    </NavLink>
-                </ul>
-            </nav>}
-
-            {(isLoggedIn) && <ul className='header__navigation'>
-                <button type="button" className="header__menu-button" onClick={() => setNavigationActive(true)}  >
-                    <img className='button-img' src={MenuButton} alt="Меню" />
-                </button>
-                <Navigation active={NavigationACtive} setActive={setNavigationActive}></Navigation>
-            </ul>
+                        <NavLink className="header__account-link" to="/profile">
+                            {currentUser.name || 'Аккаунт'}
+                            <img className="header__account" src={AccountLogo} alt="аккаунт"></img>
+                        </NavLink>
+                    </ul>
+                </nav>
             }
 
-        </header>
+            {
+                (isLoggedIn) && <ul className='header__navigation'>
+                    <button type="button" className="header__menu-button" onClick={() => setNavigationActive(true)}  >
+                        <img className='button-img' src={MenuButton} alt="Меню" />
+                    </button>
+                    <Navigation active={NavigationACtive} setActive={setNavigationActive}></Navigation>
+                </ul>
+            }
+
+        </header >
     )
 }

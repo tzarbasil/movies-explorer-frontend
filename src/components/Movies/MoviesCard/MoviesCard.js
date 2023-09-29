@@ -1,6 +1,4 @@
 import "./MoviesCard.css";
-// import film_image from '../../../images/pic__COLOR_pic.png';
-// import film_button_saved from '../../../images/save6d.svg';
 import { useLocation } from 'react-router-dom';
 
 export default function MoviesCard({ movie, saveMovie, deleteMovie }) {
@@ -39,13 +37,9 @@ export default function MoviesCard({ movie, saveMovie, deleteMovie }) {
 
             {movie.isSaved ? (
                 <button type="button"
-                    // className="movie-card__button movie-card__button-save"
                     className={`${location.pathname.includes('/saved-movies') ? 'movie-card__button-delete' : 'movie-card__button-saved'}`}
-
                     onClick={handleDeleteMovie}
-                // онклик - удаляет карточку
                 >
-                    {/* <img className="movie-card__button-image" src={film_button_saved} alt="Кнопка добавления\удаления фильма"></img> */}
                 </button>
 
             ) : (

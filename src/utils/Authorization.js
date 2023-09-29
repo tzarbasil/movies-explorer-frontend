@@ -47,6 +47,6 @@ class Authorization {
   }
 }
 
-const auth = new Authorization({ url: "http://api.diplomtzarbasil.nomoredomainsicu.ru" });
+const auth = new Authorization({ url: "https://api.diplomtzarbasil.nomoredomainsicu.ru" });
 
 export default auth;

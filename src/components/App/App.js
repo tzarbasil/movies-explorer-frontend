@@ -32,22 +32,22 @@ function App() {
   });
 
 
-
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
-    if (!jwt) return
-    setLoggedIn(true);
-    api.updateJWTToken(jwt);
-    console.log('Token check passed');
+    if (!jwt) { return } else {
+
+      api.updateJWTToken(jwt);
+      console.log('Token check passed');
+      api.getUserInfo().then(res => {
+        setCurrentUser(res.data)
+        setLoggedIn(true);
+      })
+    }
   }, []);
 
 
   useEffect(() => {
     if (loggedIn) {
-      api.getUserInfo().then(res => {
-        setCurrentUser(res.data)
-
-      })
       moviesApi.getMovies()
         .then((moviesData) => {
           setMovies(moviesData);
@@ -81,16 +81,6 @@ function App() {
       })
   }
 
-
-
-  useEffect(() => {
-    if (loggedIn) {
-      api.getSavedMovies().then((moviesData) => {
-        setSavedMovies(moviesData)
-      })
-    }
-  }, [loggedIn]);
-
   return (
     <div className='body'>
       <div className="page">
@@ -107,8 +97,8 @@ function App() {
               <Movies movies={movies} saveMovie={userSaveMovie} savedMovies={savedMovies} deleteMovie={userDeleteMovie} /></main><Footer /></div>} />
             <Route path="/saved-movies" element={<div className='route-container'> <Header /> <main><SavedMovies movies={movies} savedMovies={savedMovies} setSavedMovies={setSavedMovies} deleteMovie={userDeleteMovie} /> </main> <Footer /></div>} />
             <Route path="/profile" element={<div className='route-container'> <Header /> <main> <Profile setCurrentUser={setCurrentUser} /> </main> </div>} />
-            < Route path="/signup" element={< main className='main'> <Register /> </main >} />
-            < Route path="/signin" element={< main > <Login /> </main >} />
+            < Route path="/signup" element={< main className='main'> <Register setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn} /> </main >} />
+            < Route path="/signin" element={< main > <Login setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn} /> </main >} />
             < Route path="*" element={< main > < Error /> </main >} />
 
           </Routes >

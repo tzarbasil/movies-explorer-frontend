@@ -8,10 +8,9 @@ import FormValidation from '../../utils/FormValidation';
 import auth from '../../utils/Authorization';
 import api from '../../utils/MainApi';
 
-export default function Login({ loggedIn }) {
+export default function Login({ setCurrentUser, setLoggedIn }) {
     const { emailDirty, passwordDirty, emailError, passwordError,
         blurHandler, emailHandler, passwordHandler, loginFormValid } = FormValidation();
-
 
     const navigate = useNavigate();
 
@@ -25,9 +24,12 @@ export default function Login({ loggedIn }) {
     const logIn = () => {
         auth.login(formData.email, formData.password).then((res) => {
             if (res.token) localStorage.setItem('jwt', res.token)
-            
             api.updateJWTToken()
-            navigate('/movies')
+            api.getUserInfo().then(res => {
+                setCurrentUser(res.data)
+                setLoggedIn(true)
+                navigate('/movies')
+            })
         }).catch(err => {
             switch (err.status) {
                 case 401:
@@ -39,10 +41,6 @@ export default function Login({ loggedIn }) {
             }
         })
     }
-
-    useEffect(() => {
-        if (loggedIn) navigate('/movies');
-    }, [loggedIn]);
 
     return (
         <div className="login">
