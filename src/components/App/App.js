@@ -15,8 +15,6 @@ import Footer from '../Footer/Footer.js'
 
 import api from '../../utils/MainApi';
 
-import { moviesApi } from '../../utils/MoviesApi';
-
 import { CurrentUserContext } from '../contexts/context'
 
 
@@ -45,20 +43,18 @@ function App() {
     }
   }, []);
 
-
   useEffect(() => {
     if (loggedIn) {
-      moviesApi.getMovies()
-        .then((moviesData) => {
-          setMovies(moviesData);
-          localStorage.setItem('movies', JSON.stringify(moviesData));
+      api.getSavedMovies()
+        .then((savedMovies) => {
+          setSavedMovies(savedMovies);
+          localStorage.setItem('saved-movies', JSON.stringify(savedMovies));
         })
         .catch((error) => {
           console.log(`Ошибка: ${error}`);
         })
     }
   }, [loggedIn]);
-
 
   function userSaveMovie(movie) {
     api.saveMovie(movie)
@@ -94,8 +90,9 @@ function App() {
 
             <Route path="/" element={<Main />} />
             <Route path="/movies" element={<div className='route-container'> <Header /><main>
-              <Movies movies={movies} saveMovie={userSaveMovie} savedMovies={savedMovies} deleteMovie={userDeleteMovie} /></main><Footer /></div>} />
-            <Route path="/saved-movies" element={<div className='route-container'> <Header /> <main><SavedMovies movies={movies} savedMovies={savedMovies} setSavedMovies={setSavedMovies} deleteMovie={userDeleteMovie} /> </main> <Footer /></div>} />
+              <Movies movies={movies} saveMovie={userSaveMovie} savedMovies={savedMovies} deleteMovie={userDeleteMovie} setMovies={setMovies} /></main><Footer /></div>} />
+            <Route path="/saved-movies" element={<div className='route-container'> <Header /> <main><SavedMovies movies={movies}
+              savedMovies={savedMovies} setSavedMovies={setSavedMovies} deleteMovie={userDeleteMovie} setMovies={setMovies} /> </main> <Footer /></div>} />
             <Route path="/profile" element={<div className='route-container'> <Header /> <main> <Profile setCurrentUser={setCurrentUser} /> </main> </div>} />
             < Route path="/signup" element={< main className='main'> <Register setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn} /> </main >} />
             < Route path="/signin" element={< main > <Login setCurrentUser={setCurrentUser} setLoggedIn={setLoggedIn} /> </main >} />

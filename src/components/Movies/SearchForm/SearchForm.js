@@ -1,15 +1,25 @@
 import "./SearchForm.css";
 import "../FilterCheckbox/FilterCheckbox.css";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom"
 
-export default function SearchForm({ movies, formData, setFormData }) {
+
+import { moviesApi } from "../../../utils/MoviesApi";
+
+export default function SearchForm({ movies, setIsLoading, formData, setFormData, setMovies }) {
+    const location = useLocation()
     const [query, setQuery] = useState('')
+    const [errorText, setErrorText] = useState('');
+
 
     useEffect(() => {
-        const LSData = localStorage.getItem('mainFormFilters')
-        if (!LSData) return
-        setFormData({ ...formData, query: JSON.parse(LSData) })
-        setQuery(JSON.parse(LSData))
+
+        if (location.pathname === '/movies') {
+            const LSData = localStorage.getItem('mainFormFilters')
+            if (!LSData) return
+            setFormData({ ...JSON.parse(LSData) })
+            setQuery({ ...JSON.parse(LSData) }.query)
+        }
     }, [])
 
     const handleUserInput = (e) => {
@@ -17,13 +27,41 @@ export default function SearchForm({ movies, formData, setFormData }) {
     }
 
     const toggleCheckbox = () => {
-        setFormData({ ...formData, showShort: !formData.showShort })
+        setFormData({ query: formData.query, showShort: (!formData.showShort) })
+        localStorage.setItem('mainFormFilters', JSON.stringify({ query: formData.query, showShort: (!formData.showShort) }))
     }
 
     const saveQuery = (e) => {
         e.preventDefault()
+        if (query === '') {
+            return setErrorText(<span className="search-form__span">Нужно ввести ключевое слово</span>)
+        } else {
+            setErrorText(false)
+        }
+
         setFormData({ ...formData, query })
-        localStorage.setItem('mainFormFilters', JSON.stringify(query))
+
+
+        if (location.pathname === '/movies') {
+            localStorage.setItem('mainFormFilters', JSON.stringify({ ...formData, query }))
+        }
+
+        if (!movies.length) {
+            setIsLoading(true)
+            moviesApi.getMovies()
+                .then((moviesData) => {
+                    setMovies(moviesData);
+                    localStorage.setItem('movies', JSON.stringify(moviesData));
+                })
+                .catch((error) => {
+                    console.log(`Ошибка: ${error}`);
+                })
+                .finally(() => {
+                    setIsLoading(false)
+                })
+        } else  if (location.pathname === '/movies') {
+            
+        }
     }
 
     return (
@@ -35,9 +73,9 @@ export default function SearchForm({ movies, formData, setFormData }) {
                     type="text"
                     name="query"
                     onChange={handleUserInput}
-                    value={query}
-
+                    value={query || ''}
                 />
+                <span>{errorText}</span>
                 <button type="submit" className="search-form__button">Поиск</button>
             </label>
             <div className="checkbox-container">

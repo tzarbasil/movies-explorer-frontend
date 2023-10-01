@@ -35,6 +35,10 @@
     cursor: pointer;
 }
 
+.movie-list__error {
+    color: rgb(212, 42, 42);
+}
+
 @media screen and (max-width: 1200px) {
     .movie-list__container {
         padding: 0 30px;
@@ -71,6 +75,7 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .movie-list__container {
         grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
         row-gap: 15px;
         padding: 0;
     }

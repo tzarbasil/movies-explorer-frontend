@@ -11,6 +11,7 @@ import api from '../../utils/MainApi';
 export default function Register({ setCurrentUser, setLoggedIn }) {
     const { nameDirty, emailDirty, passwordDirty, emailError, passwordError, nameError,
         blurHandler, emailHandler, nameHandler, passwordHandler, formValid } = FormValidation();
+
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({ name: '', email: '', password: '' })
@@ -35,10 +36,8 @@ export default function Register({ setCurrentUser, setLoggedIn }) {
 
     const register = () => {
         auth.register(formData.name, formData.email, formData.password).then(res => {
-            console.log('Registration success')
             logIn()
         }).catch(err => {
-            console.log(err)
             switch (err.status) {
                 case 401:
                     setErrorMessage('Неверный логин или пароль'); break;

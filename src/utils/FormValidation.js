@@ -111,6 +111,7 @@ export default function FormValidation() {
         passwordHandler,
         formValid,
         loginFormValid,
-        profileFormValid
+        profileFormValid,
+        setProfileFormValid
     };
 }

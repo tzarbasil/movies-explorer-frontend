@@ -1,0 +1,24 @@
+.profile__popup {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    /* height: 100vh;
+    width: 100vh; */
+    width: 50px;
+    height: 10px;
+    transform: scale(0);
+}
+
+.profile__popup.active {
+    transform: scale(1);
+}
+
+.profile__popup-text {
+    color: rgb(57, 177, 49);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
