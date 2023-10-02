@@ -1,23 +1,15 @@
-import "./SearchForm.css";
-import "../FilterCheckbox/FilterCheckbox.css";
+import "./SavedMoviesSearchForm.css";
+import "../../FilterCheckbox/FilterCheckbox.css";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom"
 
 
-import { moviesApi } from "../../../utils/MoviesApi";
+import api from "../../../../utils/MainApi";
 
-export default function SearchForm({ movies, setIsLoading, formData, setFormData, setMovies }) {
+export default function SearchForm({ movies, setIsLoading, formData, setFormData, setSavedMovies }) {
+    const location = useLocation()
     const [query, setQuery] = useState('')
     const [errorText, setErrorText] = useState('');
-
-
-    useEffect(() => {
-        const LSData = localStorage.getItem('mainFormFilters')
-        if (!LSData) return
-        setFormData({ ...JSON.parse(LSData) })
-        setQuery({ ...JSON.parse(LSData) }.query)
-        if ({ ...JSON.parse(LSData) }.query) fetchMovies()
-    }, [])
 
     const handleUserInput = (e) => {
         setQuery(e.target.value)
@@ -25,16 +17,15 @@ export default function SearchForm({ movies, setIsLoading, formData, setFormData
 
     const toggleCheckbox = () => {
         setFormData({ query: formData.query, showShort: (!formData.showShort) })
-        localStorage.setItem('mainFormFilters', JSON.stringify({ query: formData.query, showShort: (!formData.showShort) }))
     }
 
-    const fetchMovies = () => {
+    const fetchSavedMovies = () => {
         if (!movies.length) {
             setIsLoading(true)
-            moviesApi.getMovies()
+            api.getSavedMovies()
                 .then((moviesData) => {
-                    setMovies(moviesData);
-                    localStorage.setItem('movies', JSON.stringify(moviesData));
+                    setSavedMovies(moviesData);
+                    localStorage.setItem('saved-movies', JSON.stringify(moviesData));
                 })
                 .catch((error) => {
                     console.log(`Ошибка: ${error}`);
@@ -43,7 +34,6 @@ export default function SearchForm({ movies, setIsLoading, formData, setFormData
                     setIsLoading(false)
                 })
         }
-
     }
 
     const saveQuery = (e) => {
@@ -56,10 +46,7 @@ export default function SearchForm({ movies, setIsLoading, formData, setFormData
 
         setFormData({ ...formData, query })
 
-
-        localStorage.setItem('mainFormFilters', JSON.stringify({ ...formData, query }))
-
-        fetchMovies()
+        fetchSavedMovies()
     }
 
     return (

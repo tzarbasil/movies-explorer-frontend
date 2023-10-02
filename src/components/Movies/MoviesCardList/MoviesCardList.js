@@ -13,7 +13,8 @@ export default function MoviesCardList({ movies, savedMovies, saveMovie, deleteM
 
     useEffect(() => {
         const savedMoviesIDs = savedMovies.map(el => el.movieId)
-        const moviesToFilter = movies.length ? movies : savedMovies
+        // const moviesToFilter = movies.length ? movies : savedMovies
+        const moviesToFilter = movies
 
         const addIsSavedFlag = (el) => {
             const movieUniqueId = el.id || el.movieId

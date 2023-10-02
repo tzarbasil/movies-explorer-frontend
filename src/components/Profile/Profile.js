@@ -22,13 +22,20 @@ export default function Profile({ setCurrentUser }) {
 
     const logOut = () => {
         localStorage.removeItem("jwt");
+        localStorage.removeItem('movies');
+        localStorage.removeItem('mainFormFilters');
         setCurrentUser({})
         navigate('/');
     }
     const currentUser = useContext(CurrentUserContext)
-    const [formData, setFormData] = useState({ name: '', email: '', })
+    const [formData, setFormData] = useState({ name: currentUser.name, email: currentUser.email, })
 
     const handleUserInput = (e) => {
+        switch (e.target.name) {
+            case 'name': nameHandler(e); break;
+            case 'email': emailHandler(e); break;
+            default: return;
+        }
         setFormData({
             ...formData, [e.target.name]: e.target.value
         })
@@ -39,27 +46,42 @@ export default function Profile({ setCurrentUser }) {
     const [errorMessage, setErrorMessage] = useState('')
 
     const updateUser = () => {
-        api.patchUserInfo(formData.name, formData.email).then(user => {
-            setCurrentUser(user)
-        }).catch(err => {
-            switch (err.status) {
-                case 401:
-                    setErrorMessage('Неверный логин или пароль'); break;
-                case 500:
-                    setErrorMessage('Ошибка сервера'); break;
-                default:
-                    setErrorMessage(err.message); break;
-            }
-        })
-        setModalActive(true)
+        api.patchUserInfo(formData.name, formData.email)
+            .then(user => {
+                setCurrentUser(user)
+                
+            }).then((res) => {
+                setModalActive(true)
+
+            })
+
+            .catch(err => {
+                switch (err.status) {
+                    case 401:
+                        setErrorMessage('Неверный логин или пароль'); break;
+                    case 500:
+                        setErrorMessage('Ошибка сервера'); break;
+                    default:
+                        setErrorMessage(err.message); break;
+                }
+            })
+
     }
+
+    useEffect(() => {
+        setFormData({ name: currentUser.name, email: currentUser.email })
+        if (currentUser.name) nameHandler({ name: currentUser.name })
+        if (currentUser.email) emailHandler({ email: currentUser.email })
+    }, [currentUser])
 
     useEffect(() => {
         if ((formData.name === currentUser.name) && (formData.email === currentUser.email)) {
             setProfileFormValid(false)
+        } else {
+            nameHandler(formData)
+            emailHandler(formData)
         }
-    }, [currentUser.email, currentUser.name, profileFormValid, formData.email, formData.name])
-
+    }, [currentUser, formData])
 
     return (
         <section className="profile">
@@ -71,7 +93,7 @@ export default function Profile({ setCurrentUser }) {
                         <input
                             defaultValue={currentUser.name}
                             onBlur={e => blurHandler(e)}
-                            onChange={(e) => { handleUserInput(e); nameHandler(e) }}
+                            onChange={(e) => { handleUserInput(e) }}
                             className="profile__userdata"
                             name="name"
                             required
@@ -88,7 +110,7 @@ export default function Profile({ setCurrentUser }) {
                         <input
                             defaultValue={currentUser.email}
                             onBlur={e => blurHandler(e)}
-                            onChange={(e) => { handleUserInput(e); emailHandler(e) }}
+                            onChange={(e) => { handleUserInput(e) }}
                             className="profile__userdata"
                             name="email"
                             required

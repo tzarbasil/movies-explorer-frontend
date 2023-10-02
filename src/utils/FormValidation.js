@@ -20,10 +20,11 @@ export default function FormValidation() {
 
 
     const nameHandler = (e) => {
-        setName(e.target.value)
-        if ((e.target.value.length < 3 || e.target.value.length > 40)) {
+        const name = (e.name === undefined ? e.target?.value : e.name)
+        setName(name)
+        if ((name.length < 3 || name.length > 40)) {
             setNameError('Имя должно быть длиннее 2-х символов')
-            if (!e.target.value) {
+            if (!name) {
                 setNameError('Имя не должно быть пустым')
             }
         } else {
@@ -32,10 +33,11 @@ export default function FormValidation() {
     }
 
     const passwordHandler = (e) => {
-        setPassword(e.target.value)
-        if ((e.target.value.length < 3 || e.target.value.length > 40)) {
+        const password = (e.password === undefined ? e.target?.value : e.password)
+        setPassword(password)
+        if ((password.length < 3 || password.length > 40)) {
             setPasswordError('Пароль должен быть длиннее 2-х символов')
-            if (!e.target.value) {
+            if (!password) {
                 setPasswordError('Пароль не должен быть пустым')
             }
         } else {
@@ -44,9 +46,10 @@ export default function FormValidation() {
     }
 
     const emailHandler = (e) => {
-        setEmail(e.target.value)
+        const email = (e.email === undefined ? e.target?.value : e.email)
+        setEmail(email)
         const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        if (!re.test(String(e.target.value).toLowerCase())) {
+        if (!re.test(String(email).toLowerCase())) {
             setEmailError('E-mail неккоректный')
         } else {
             setEmailError('')
@@ -54,6 +57,7 @@ export default function FormValidation() {
     }
 
     useEffect(() => {
+
         if (emailError || passwordError || nameError) {
             setFormValid(false)
         } else {
@@ -66,7 +70,6 @@ export default function FormValidation() {
     useEffect(() => {
         if (emailError || passwordError) {
             setLoginFormValid(false)
-
         } else {
             setLoginFormValid(true)
         }
@@ -76,11 +79,9 @@ export default function FormValidation() {
     useEffect(() => {
         if (nameError || emailError) {
             setProfileFormValid(false)
-
         } else {
             setProfileFormValid(true)
         }
-
     }, [emailError, nameError])
 
     const blurHandler = (e) => {
@@ -94,6 +95,7 @@ export default function FormValidation() {
             case 'password':
                 setPasswordDirty(true)
                 break
+            default: break;
         }
     }
 
